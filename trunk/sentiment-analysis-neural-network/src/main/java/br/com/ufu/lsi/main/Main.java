@@ -3,18 +3,18 @@ package br.com.ufu.lsi.main;
 
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
-import weka.classifiers.functions.MultilayerPerceptron;
 import weka.core.Attribute;
 import weka.core.Instances;
-import br.com.ufu.lsi.preprocessing.OpinionProcessor;
+import br.com.ufu.lsi.preprocessing.GIProcessor;
+import br.com.ufu.lsi.rebfnetwork.RBFClassifier;
 
 public class Main {
 
     public static void main( String... args ) throws Exception {
 
         //Preprocessor p = new Preprocessor();
-        //GIProcessor p = new GIProcessor();
-        OpinionProcessor p = new OpinionProcessor();
+        GIProcessor p = new GIProcessor();
+        //OpinionProcessor p = new OpinionProcessor();
 
         Instances instances = p.preprocess();
         
@@ -51,7 +51,7 @@ public class Main {
         //RBFNetwork rbf = new RBFNetwork();
         //return rbf;
         
-        MultilayerPerceptron mlp = new MultilayerPerceptron();
+        /*MultilayerPerceptron mlp = new MultilayerPerceptron();
         
         mlp.setHiddenLayers( "15" );
         mlp.setLearningRate( 0.01 );
@@ -61,10 +61,12 @@ public class Main {
         mlp.setNominalToBinaryFilter( false );
         mlp.setGUI( false );
         
-        return mlp;
+        return mlp;*/
         
-        //RBFClassifier rbfClassifier = new RBFClassifier();
-        //return rbfClassifier;
+        RBFClassifier rbfClassifier = new RBFClassifier();
+        rbfClassifier.setNumFunctions( 15 );
+        rbfClassifier.setNumThreads( 2 );
+        return rbfClassifier;
     }
 
 }

@@ -190,16 +190,17 @@ public class DocumentFrequencyAttributeEval extends ASEvaluation implements Attr
                     if ( m_missingAsZero ) {
                         if ( ! Instance.isMissingValue( value ) && value != 0.0 ) { //man kÃ¶nnte auch isMissingSparce(valueIndex) verwenden, oder ineffizienterweise isMissing(attIndex)
                             m_DFs[ attIndex ]++ ;
+                            //m_DFs[ attIndex ]+=value ;
                         }
                     } else {
                         if ( value != 0.0 ) {
                             m_DFs[ attIndex ]++ ;
+                            //m_DFs[ attIndex ]+=value ;
                         }
                     }
                 }
             }
         }
-
     }
 
     /**
