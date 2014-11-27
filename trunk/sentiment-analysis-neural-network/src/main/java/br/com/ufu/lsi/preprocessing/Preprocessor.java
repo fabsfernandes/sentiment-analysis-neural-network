@@ -17,7 +17,7 @@ import br.com.ufu.lsi.utils.SnowballStemmerWrapper;
 public class Preprocessor {
 
 
-    private static final int FEATURES_NUMBER = 500;
+    private static final int FEATURES_NUMBER = 700;
     
     public Instances preprocess() throws Exception {
 

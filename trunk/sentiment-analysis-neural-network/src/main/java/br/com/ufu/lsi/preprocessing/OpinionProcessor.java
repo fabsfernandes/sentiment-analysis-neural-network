@@ -21,7 +21,7 @@ public class OpinionProcessor {
     
     private static final String PREFIX = "PREFIX-";
 
-    private static final int FEATURES_NUMBER = 500;
+    private static final int FEATURES_NUMBER = 1000;
 
     public Instances preprocess() throws Exception {
         DataSource source = new DataSource( "/Users/fabiola/Doutorado/IA/Trabalho2/dataset/reviews/reviews.arff" );

@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class TestStrings {
     
-    @Test
+    //@Test
     public void str(){
         String sCurrentLine = "word, ,negativ";
         
@@ -16,10 +16,10 @@ public class TestStrings {
         System.out.println( sCurrentLine);
     }
     
-    //@Test
+    @Test
     public void stemmer() {
         SnowballStemmerWrapper st = new SnowballStemmerWrapper();
-        System.out.println( st.stem( "something" ) );
+        System.out.println( st.stem( "gostei" ) );
     }
     
     //@Test
