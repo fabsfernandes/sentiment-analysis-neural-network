@@ -12,6 +12,8 @@ public class Main {
 
     public static void main( String... args ) throws Exception {
 
+        long timestamp = System.currentTimeMillis();
+        
         //Preprocessor p = new Preprocessor();
         GIProcessor p = new GIProcessor();
         //OpinionProcessor p = new OpinionProcessor();
@@ -19,8 +21,6 @@ public class Main {
         Instances instances = p.preprocess();
         
         Classifier cls = getClassifier();
-        
-        
         
         System.out.println( "##" + instances.numAttributes() );
         instances.setClassIndex( 0 );
@@ -43,6 +43,10 @@ public class Main {
         System.out.println( eval.toClassDetailsString() );
         System.out.println( eval.toMatrixString() );
         
+        double t = (System.currentTimeMillis() - timestamp);
+        double d = (t/1000.0)/60.0;
+        System.out.println( "=======> " + d + "min" );
+        
     }
     
     
@@ -64,7 +68,7 @@ public class Main {
         return mlp;*/
         
         RBFClassifier rbfClassifier = new RBFClassifier();
-        rbfClassifier.setNumFunctions( 15 );
+        rbfClassifier.setNumFunctions( 3 );
         rbfClassifier.setNumThreads( 2 );
         return rbfClassifier;
     }
